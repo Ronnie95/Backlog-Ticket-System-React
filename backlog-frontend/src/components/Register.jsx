@@ -9,6 +9,7 @@ function Register() {
         username: "",
         email: "",
         password: "",
+        role: "",
     });
 
     const navigate = useNavigate();
