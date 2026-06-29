@@ -87,6 +87,15 @@ function Register() {
                     onChange={handleChange}
                 />
 
+                <Form.Control
+                    type="role"
+                    placeholder="role"
+                    name="role"
+                    value={registerForm.role}
+                    onChange={handleChange}
+                />
+                
+
 
             </Form.Group>
 
