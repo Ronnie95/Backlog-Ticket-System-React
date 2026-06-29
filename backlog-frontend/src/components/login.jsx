@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
-import API from "../api/api";
+import api from "../services/api";
 
 
 function Login() {
@@ -29,7 +29,7 @@ function Login() {
 
         try {
 
-            const response = await API.post("api/token/", loginForm);
+            const response = await api.post("api/token/", loginForm);
 
 
             localStorage.setItem(
