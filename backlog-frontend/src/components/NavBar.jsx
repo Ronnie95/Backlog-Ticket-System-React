@@ -1,33 +1,42 @@
-
+import React from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function NavBar() {
 
+    return (
+        <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
 
-    return(
+                <Navbar.Brand as={Link} to="/home">
+                    Backlog
+                </Navbar.Brand>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Backlog</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tickets</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    )
+                <Navbar.Toggle aria-controls="navbar-nav" />
 
+                <Navbar.Collapse id="navbar-nav">
+
+                    <Nav className="me-auto">
+
+                        <Nav.Link as={Link} to="/home">
+                            Home
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to="/projects">
+                            Projects
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to="/tickets">
+                            Tickets
+                        </Nav.Link>
+
+                    </Nav>
+
+                </Navbar.Collapse>
+
+            </Container>
+        </Navbar>
+    );
 }
 
-export default NavBar
+export default NavBar;

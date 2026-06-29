@@ -44,7 +44,7 @@ function Login() {
             );
 
 
-            navigate("/projects");
+            navigate("/home");
 
 
         } catch (err) {

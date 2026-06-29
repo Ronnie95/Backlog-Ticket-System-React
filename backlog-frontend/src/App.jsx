@@ -1,31 +1,33 @@
 import React from "react";
 import Home from "./Home";
+import Projects from "./components/Projects";
 import Navbar from "./components/NavBar"
 import Register from "./components/Register"
 import {Routes, Route, } from "react-router-dom"
 import Login from "./components/login";
 
   
-  function App() {
-    return (
+function App() {
+  return (
+    <div>
 
+      <Navbar />
 
-  <div>
-      <Navbar/>
-      <Home />
-    <Routes>
-      <Route path='/register'>
-        <Route path='' element={<Register />} />
-      </Route>
-      <Route path='/api/token'>
-        <Route path='' element={<Login />} />
-      </Route>
-    </Routes>
+      <Routes>
+
+        <Route path="/home" element={<Home />} />
+
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/projects" element={<Projects />} />
+
+      </Routes>
 
     </div>
-     
-    );
-  }
+  );
+}
   
   export default App;
   

@@ -1,12 +1,4 @@
-
-
-// function Home(){
-//     return(
-//         <h1>Hello</h1>
-//     )
-// }
-
-// export default Home
+import NavBar from "./components/NavBar";
 
 function Home() {
     return (
