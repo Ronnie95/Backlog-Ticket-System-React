@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
@@ -16,6 +16,30 @@ function CreateTicket() {
         priority: "",
         project: ""
     });
+
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+
+        const getProjects = async () => {
+    
+            try {
+    
+                const response = await API.get("projects/");
+    
+                setProjects(response.data);
+    
+            } catch (error) {
+    
+                console.log(error.response?.data || error.message);
+    
+            }
+    
+        };
+    
+        getProjects();
+    
+    }, []);
 
 
     const handleChange = (e) => {
@@ -56,7 +80,7 @@ function CreateTicket() {
                 <Card.Body>
 
                     <Card.Title>
-                        Create Project
+                        Create a Ticket
                     </Card.Title>
 
 
@@ -124,7 +148,7 @@ function CreateTicket() {
 
                             <Form.Select
                                 name="priority"
-                                value={projectForm.status}
+                                value={ticketForm.priority}
                                 onChange={handleChange}
                                 required
                             >
@@ -154,13 +178,23 @@ function CreateTicket() {
                             Date
                         </Form.Label>
 
-                        <Form.Control
-                            type="text"
+                        <Form.Select
                             name="project"
                             value={ticketForm.project}
                             onChange={handleChange}
                             required
-                        />
+                        >
+                            <option value="">
+                                Select Project
+                            </option>
+
+                            {projects.map((project) => (
+                                <option key={project.id} value={project.id}>
+                                    {project.project_name}
+                                </option>
+                            ))}
+
+                        </Form.Select>
 
                         </Form.Group>
 
@@ -187,4 +221,4 @@ function CreateTicket() {
 }
 
 
-export default CreateProject;
+export default CreateTicket;
