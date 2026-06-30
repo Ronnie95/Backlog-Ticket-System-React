@@ -7,6 +7,7 @@ import {Routes, Route, } from "react-router-dom"
 import Login from "./components/login";
 import CreateProject from "./components/ProjectsCreate";
 import ProjectDetail from "./components/projectsShow";
+import EditProject from "./components/ProjectsEdit";
 
   
 function App() {
@@ -29,7 +30,10 @@ function App() {
 
         <Route path="/projects/:id" element={<ProjectDetail />} />
 
-        
+        <Route path="/projects/:id/edit" element={<EditProject />} />
+
+
+
       </Routes>
 
     </div>

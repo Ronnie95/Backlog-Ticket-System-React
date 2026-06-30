@@ -125,7 +125,7 @@ function CreateProject() {
 
                             <Form.Control
                                 type="date"
-                                name="due_date"
+                                name="dueDate"
                                 value={projectForm.dueDate}
                                 onChange={handleChange}
                                 required
