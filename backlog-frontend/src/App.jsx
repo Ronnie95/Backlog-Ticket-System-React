@@ -5,6 +5,8 @@ import Navbar from "./components/NavBar"
 import Register from "./components/Register"
 import {Routes, Route, } from "react-router-dom"
 import Login from "./components/login";
+import CreateProject from "./components/ProjectsCreate";
+import ProjectDetail from "./components/projectsShow";
 
   
 function App() {
@@ -23,6 +25,11 @@ function App() {
 
         <Route path="/projects" element={<Projects />} />
 
+        <Route path="/projects/new" element={<CreateProject />} />
+
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+
+        
       </Routes>
 
     </div>
