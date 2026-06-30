@@ -5,7 +5,7 @@ import api from "../services/api";
 
 function Tickets() {
 
-    const [tickets, settickets] = useState([]);
+    const [tickets, setTickets] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -53,13 +53,13 @@ function Tickets() {
 
                 <h2>Tickets</h2>
 
-                <Link to="/projects/new">
+                <Link to="/tickets/new">
                     <Button>Create a Ticket</Button>
                 </Link>
 
             </div>
 
-            {projects.length === 0 ? (
+            {tickets.length === 0 ? (
 
                 <p>No Tickets found.</p>
 
