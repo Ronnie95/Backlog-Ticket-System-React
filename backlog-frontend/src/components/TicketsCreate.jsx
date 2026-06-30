@@ -25,7 +25,7 @@ function CreateTicket() {
     
             try {
     
-                const response = await API.get("projects/");
+                const response = await api.get("projects/");
     
                 setProjects(response.data);
     
@@ -185,7 +185,7 @@ function CreateTicket() {
                             required
                         >
                             <option value="">
-                                Select Project
+                                Submit Ticket
                             </option>
 
                             {projects.map((project) => (
@@ -203,7 +203,7 @@ function CreateTicket() {
                             variant="primary" 
                             type="submit"
                         >
-                            Create Project
+                            Submit Ticket
                         </Button>
 
 
