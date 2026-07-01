@@ -135,6 +135,16 @@ function TicketDetail() {
 
                     </Link>
 
+                    <Link to={`/comments/new`}>
+
+                        <Button 
+                            variant="warning"
+                            className="me-2"
+                        >
+                            Edit
+                        </Button>
+
+                        </Link>
 
 
                     <Button
