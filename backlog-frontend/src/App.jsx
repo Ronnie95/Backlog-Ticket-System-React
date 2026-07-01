@@ -11,6 +11,7 @@ import EditProject from "./components/ProjectsEdit";
 import Tickets from "./components/Tickets.jsx";
 import CreateTicket from "./components/TicketsCreate"
 import TicketDetail from "./components/TicketDetail";
+import CreateComments from "./components/CommentsCreate";
 
   
 function App() {
@@ -40,6 +41,9 @@ function App() {
         <Route path="/tickets/new" element={<CreateTicket />} />
 
         <Route path="/tickets/:id" element={<TicketDetail />} />
+
+        <Route path="/comments/new" element={<CreateComments />} />
+
 
       </Routes>
 
